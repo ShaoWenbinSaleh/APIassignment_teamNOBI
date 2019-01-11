@@ -9,6 +9,23 @@ package CircuitManager;
 abstract class Component {
 
 //	protected String expression;
-	protected abstract boolean getResult();
-        protected abstract double getResultDouble();
+       protected abstract double getResultDouble();
+        
+       public boolean getResult() 
+       {
+           double res = getResultDouble();
+           if (res == 0) 
+           {
+               return false;
+           }
+           else if (res == 1)
+           {
+               return true;
+           }
+           else
+           {
+               throw  new UnsupportedOperationException("Not supported yet.");
+           }
+       }
+
 }//end Component

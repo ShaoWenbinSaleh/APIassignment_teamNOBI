@@ -227,7 +227,7 @@ public class CircuitManagerTest {
     {
         CircuitManager system = new CircuitManager();
         
-        CircuitComponent a = system.newAND("A", "B");
+        Component a = system.newAND("A", "B");
                 
         system.setInput("A", true);
         system.setInput("B", true);
@@ -256,32 +256,68 @@ public class CircuitManagerTest {
     @Test
     public void testAlwaysTrue()
     {
-//        CircuitManager system = new CircuitManager();
-//        
-//        Component b = system.newNOT("A");
-//        Component a = system.newOR("A", b);
-//        
-//        boolean res = a.getResult();
-//        assertEquals(true, res);
         CircuitManager system = new CircuitManager();
         
-        Component a = system.newAND("A", "B");
+        Component b = system.newNOT("A");
+        Component a = system.newOR("A", b);
         
-        Component b = system.newOR("C", "D");
+        boolean res = a.getResult();
+        assertEquals(true, res);
+//        CircuitManager system = new CircuitManager();
+//        
+//        Component a = system.newAND("A", "B");
+//        
+//        Component b = system.newOR("C", "D");
+//        
+//        Component test = system.newAND(a, b);
+//        system.setInput("A", true);
+//        system.setInput("B", false);
+//        system.setInput("C", false);
+//        system.setInput("D", true);
 
+//        CustomTwoPinsComponent test = new CustomTwoPinsComponent(a, b) {
+//            @Override
+//            public double evaluateResultDouble(double first, double second) {
+//                if ( first >= second) {
+//                    return first * 100;
+//                }
+//                else {
+//                    return second + 10000000;
+//                }
+//            }
+//        };
+       
+//        System.out.print(test.getResult());
+   }
+    
+    @Test
+    public void testGreaterThanElement()
+    {
+        CircuitManager system = new CircuitManager();
+        Component a = system.newAND("X1", system.newNOT("X1"));
+        Component b = system.newInputComponent("X1");
         CustomTwoPinsComponent test = new CustomTwoPinsComponent(a, b) {
             @Override
             public double evaluateResultDouble(double first, double second) {
                 if ( first >= second) {
-                    return first * 100;
+                    return 1;
                 }
                 else {
-                    return second + 10000000;
+                    return 0;
                 }
             }
         };
         
-
-        System.out.print("s:" + test.getResultDouble());
-   }
+        system.Reset();
+        system.setInput("X1", 0.5);
+        assertTrue(0.0 == test.getResultDouble());
+       
+        system.Reset();
+        system.setInput("X1", 1);
+        assertTrue(0.0 == test.getResultDouble());
+        
+        system.Reset();
+        system.setInput("X1", 0);
+        assertTrue(1.0 == test.getResultDouble());
+    }
 }

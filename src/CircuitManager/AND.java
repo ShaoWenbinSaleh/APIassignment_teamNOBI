@@ -15,9 +15,9 @@ class AND extends TwoPinsComponent {
 	public void finalize() throws Throwable {
 		super.finalize();
 	}
-	public boolean getResult(){
-		return firstComponent.getResult() && secondComponent.getResult();
-	}
+//	public boolean getResult(){
+//		return firstComponent.getResult() && secondComponent.getResult();
+//	}
 
     @Override
     protected double getResultDouble() {

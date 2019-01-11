@@ -14,6 +14,11 @@ class CircuitManager {
     public CircuitManager() {
         VariablesList.getInstance().reset();
     }
+    
+    public void Reset()
+    {
+        VariablesList.getInstance().reset();
+    }
 
     public void finalize() throws Throwable {
 
@@ -48,47 +53,56 @@ class CircuitManager {
 
     }
     
-    public CircuitComponent newAND(Component a, Component b)
+    public Component newAND(Component a, Component b)
     {
         return ComponentFactory.createANDComponent(a, b);
     }
         
-    public CircuitComponent newAND(String a, String b){
+    public Component newAND(String a, String b){
         return ComponentFactory.createANDComponent(new InputComponent(a), new InputComponent(b));
     }
     
-    public CircuitComponent newAND(Component a, String b)
+    public Component newAND(Component a, String b)
     {
         return ComponentFactory.createANDComponent(a, new InputComponent(b));
     }
  
-    public CircuitComponent newAND(String a, Component b)
+    public Component newAND(String a, Component b)
     {
         return ComponentFactory.createANDComponent(new InputComponent(a), b);
     }
     
-    public CircuitComponent newOR(Component a, Component b){
+    public Component newOR(Component a, Component b){
         return ComponentFactory.createORComponent(a, b);
     }
     
-    public CircuitComponent newOR(Component a, String b){
+    public Component newOR(Component a, String b){
         return ComponentFactory.createORComponent(a, new InputComponent(b));
     }
     
-    public CircuitComponent newOR(String a, Component b){
+    public Component newOR(String a, Component b){
         return ComponentFactory.createORComponent(new InputComponent(a), b);
     }
     
-    public CircuitComponent newOR(String a, String b){
+    public Component newOR(String a, String b){
         return ComponentFactory.createORComponent(new InputComponent(a), new InputComponent(b));
     }
     
-    public CircuitComponent newNOT(String a){
+    public Component newNOT(String a){
         return ComponentFactory.createNOTComponent(new InputComponent(a));
     }
     
-    public CircuitComponent newNOT(Component a){
+    public Component newNOT(Component a){
         return ComponentFactory.createNOTComponent(a);
+    }
+    
+    public Component newInputComponent(String a){
+        return ComponentFactory.createInputComponent(a);
+    }
+    
+    public Component newInputComponent(String a, double d){
+        VariablesList.getInstance().setVariable(a, d);
+        return ComponentFactory.createInputComponent(a);
     }
     
     public void setInput(String str, boolean b)
@@ -96,7 +110,11 @@ class CircuitManager {
         VariablesList.getInstance().setVariable(str, b);
     }
     
-    
+    public void setInput(String str, double b)
+    {
+        VariablesList.getInstance().setVariable(str, b);
+    }
+        
     public static void main(String[] args) {
         // TODO code application logic here
         

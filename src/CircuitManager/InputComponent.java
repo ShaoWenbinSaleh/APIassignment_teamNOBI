@@ -22,13 +22,10 @@ class InputComponent extends Component {
 	public void finalize() throws Throwable {
 		super.finalize();
 	}
-	public boolean getResult(){
-		return VariablesList.getInstance().getVariableByName(varName);
-	}
 
     @Override
     protected double getResultDouble() {
-        return 1;
+        return VariablesList.getInstance().getVariableByName(varName);
     }
         
 

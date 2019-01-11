@@ -12,4 +12,5 @@ package CircuitManager;
 public class GlobalVar {
 //    public static boolean isDebuging = true;
     public static boolean defaultValue = false;
+    public static double defaultValueDouble = 0.0;
 }

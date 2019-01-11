@@ -52,4 +52,9 @@ class ComponentFactory {
             return new NOT(c);
         }
         
+        public static InputComponent createInputComponent(String s)
+        {
+            return new InputComponent(s);
+        }
+        
 }//end ComponentFactory

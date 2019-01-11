@@ -19,9 +19,6 @@ class NOT extends OnePinComponent {
 	public void finalize() throws Throwable {
 		super.finalize();
 	}
-	public boolean getResult(){
-		return !(component.getResult());
-	}
 
     @Override
     protected double getResultDouble() {
