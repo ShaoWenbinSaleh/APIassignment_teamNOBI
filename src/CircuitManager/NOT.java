@@ -22,4 +22,9 @@ class NOT extends OnePinComponent {
 	public boolean getResult(){
 		return !(component.getResult());
 	}
+
+    @Override
+    protected double getResultDouble() {
+        return 1- component.getResultDouble();
+    }
 }//end NOT

@@ -8,10 +8,12 @@ import java.util.HashMap;
  * @version 1.0
  * @created 10-Jan-2019 11:52:38 PM
  */
-class CircuitComponent extends Component {
+abstract class CircuitComponent extends Component {
 
-	private Component childComponent;
+//	private Component childComponent;
 //        private HashMap <String, Boolean> variablesHashMap;
+        
+
 
 //        public CircuitComponent(String str)
 //        {
@@ -37,7 +39,5 @@ class CircuitComponent extends Component {
 	public void finalize() throws Throwable {
 		super.finalize();
 	}
-	public boolean getResult(){
-		return childComponent.getResult();
-	}
+//	public boolean getResult(){
 }//end CircuitComponent

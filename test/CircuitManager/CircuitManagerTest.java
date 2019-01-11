@@ -256,12 +256,32 @@ public class CircuitManagerTest {
     @Test
     public void testAlwaysTrue()
     {
+//        CircuitManager system = new CircuitManager();
+//        
+//        Component b = system.newNOT("A");
+//        Component a = system.newOR("A", b);
+//        
+//        boolean res = a.getResult();
+//        assertEquals(true, res);
         CircuitManager system = new CircuitManager();
         
-        Component b = system.newNOT("A");
-        Component a = system.newOR("A", b);
+        Component a = system.newAND("A", "B");
         
-        boolean res = a.getResult();
-        assertEquals(true, res);
+        Component b = system.newOR("C", "D");
+
+        CustomTwoPinsComponent test = new CustomTwoPinsComponent(a, b) {
+            @Override
+            public double evaluateResultDouble(double first, double second) {
+                if ( first >= second) {
+                    return first * 100;
+                }
+                else {
+                    return second + 10000000;
+                }
+            }
+        };
+        
+
+        System.out.print("s:" + test.getResultDouble());
    }
 }

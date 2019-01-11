@@ -15,10 +15,18 @@ public abstract class CustomTwoPinsComponent extends TwoPinsComponent {
         super(c1, c2);
     }
     
-    public abstract boolean evaluateResult(boolean first, boolean second);
+//    public abstract boolean evaluateResult(boolean first, boolean second);
+    public abstract double evaluateResultDouble(double first, double second);
+
     
     public boolean getResult()
     {
-	return evaluateResult(firstComponent.getResult(), secondComponent.getResult());
+        return true;
+//	return evaluateResult(firstComponent.getResult(), secondComponent.getResult());
+    }
+    
+    public double getResultDouble()
+    {
+        return evaluateResultDouble(firstComponent.getResultDouble(), secondComponent.getResultDouble());
     }
 }

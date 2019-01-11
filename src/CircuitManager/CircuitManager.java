@@ -97,21 +97,31 @@ class CircuitManager {
     }
     
     
-//    public static void main(String[] args) {
-//        // TODO code application logic here
-//        CircuitManager system = new CircuitManager();
-//        
-//        CircuitComponent a = system.newAND("A", "B");
-//        
-//        CircuitComponent b = system.newAND("C", "D");
-//        CircuitComponent c = system.newNOT(b);
-//        CircuitComponent d = system.newOR(c, a);
-//                
-//        system.setInput("A", true);
-//        system.setInput("B", true);
-//        system.setInput("C", false);
-//        system.setInput("D", true);
-//        
-//        System.out.print(d.getResult());
-//    }
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        System.out.print("enter the main");
+        CircuitManager system = new CircuitManager();
+        
+        Component a = system.newAND("A", "B");
+        
+        Component b = system.newOR("C", "D");
+
+        CustomTwoPinsComponent test = new CustomTwoPinsComponent(a, b) {
+            @Override
+            public double evaluateResultDouble(double first, double second) {
+                if ( first >= second) {
+                    return 1;
+                }
+                else {
+                    return 0;
+                }
+            }
+
+        };
+        
+        System.out.print("out");
+
+        System.out.print("s:" + test.getResultDouble());
+    }
 }//end CircuitManager

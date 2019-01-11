@@ -25,4 +25,11 @@ class InputComponent extends Component {
 	public boolean getResult(){
 		return VariablesList.getInstance().getVariableByName(varName);
 	}
+
+    @Override
+    protected double getResultDouble() {
+        return 1;
+    }
+        
+
 }//end InputComponent

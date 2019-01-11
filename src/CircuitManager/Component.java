@@ -10,4 +10,5 @@ abstract class Component {
 
 //	protected String expression;
 	protected abstract boolean getResult();
+        protected abstract double getResultDouble();
 }//end Component

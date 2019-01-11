@@ -18,4 +18,9 @@ class OR extends TwoPinsComponent {
 	public boolean getResult(){
 		return firstComponent.getResult() || secondComponent.getResult();
 	}
+
+    @Override
+    protected double getResultDouble() {
+        return  1 - ( 1 - firstComponent.getResultDouble())*( 1 - secondComponent.getResultDouble());
+    }
 }//end OR
