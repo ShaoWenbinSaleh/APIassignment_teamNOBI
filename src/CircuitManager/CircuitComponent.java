@@ -12,11 +12,6 @@ class CircuitComponent extends Component {
 
 	private Component childComponent;
 //        private HashMap <String, Boolean> variablesHashMap;
-        
-	public CircuitComponent(){
-
-	}
-       
 
 //        public CircuitComponent(String str)
 //        {

@@ -10,10 +10,6 @@ abstract class TwoPinsComponent extends CircuitComponent {
 
 	protected Component firstComponent;
 	protected Component secondComponent;
-
-	public TwoPinsComponent(){
-
-	}
         
         public TwoPinsComponent(Component c1, Component c2){
             firstComponent = c1;
