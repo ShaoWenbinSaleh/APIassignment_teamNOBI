@@ -81,10 +81,16 @@ class VariablesList {
 //                throw new IllegalArgumentException("The input value " + s + " has already been defined!");
 //            }
             
-            if (d < 0 && d > 1)
+            if (d < 0 || d > 1)
             {
                 throw new IllegalArgumentException("The input value " + d + " should be between 0 and 1!");
             }
+            
+            if (variablesHashMap.containsKey(s))
+            {
+               throw new IllegalArgumentException(s + "is already defined!");
+            }
+                 
             
             variablesHashMap.put(s, d);
         }

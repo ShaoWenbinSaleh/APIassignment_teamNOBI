@@ -6,12 +6,12 @@ package CircuitManager;
  * @version 1.0
  * @created 10-Jan-2019 11:52:38 PM
  */
-abstract class Component {
+abstract public class Component {
 
 //	protected String expression;
        protected abstract double getResultDouble();
         
-       public boolean getResult() 
+       public final boolean getResult() 
        {
            double res = getResultDouble();
            if (res == 0) 

@@ -39,5 +39,22 @@ abstract class CircuitComponent extends Component {
 	public void finalize() throws Throwable {
 		super.finalize();
 	}
+        
+//       public boolean getResult() 
+//       {
+//           double res = getResultDouble();
+//           if (res == 0) 
+//           {
+//               return false;
+//           }
+//           else if (res == 1)
+//           {
+//               return true;
+//           }
+//           else
+//           {
+//               throw  new UnsupportedOperationException("Not supported yet.");
+//           }
+//       }
 //	public boolean getResult(){
 }//end CircuitComponent

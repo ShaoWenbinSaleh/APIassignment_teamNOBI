@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * @version 1.0
  * @created 10-Jan-2019 11:52:38 PM
  */
-class CircuitManager {
+public class CircuitManager {
 
     private CircuitComponent circuit;
 
@@ -118,28 +118,43 @@ class CircuitManager {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        System.out.print("enter the main");
         CircuitManager system = new CircuitManager();
         
-        Component a = system.newAND("A", "B");
+        Component a = system.newAND("X1", "X2");
+        Component b = system.newNOT("X1");
+        Component c = system.newOR(a, b);
+        system.setInput("X1", 0.0);
         
-        Component b = system.newOR("C", "D");
-
-        CustomTwoPinsComponent test = new CustomTwoPinsComponent(a, b) {
-            @Override
-            public double evaluateResultDouble(double first, double second) {
-                if ( first >= second) {
-                    return 1;
-                }
-                else {
-                    return 0;
-                }
-            }
-
-        };
+        try{
+            system.setInput("X2", 2.0);
+        }
+        catch(Exception e){
+            System.out.print("exception!");
+        }
         
-        System.out.print("out");
-
-        System.out.print("s:" + test.getResultDouble());
+//        
+//        System.out.print("enter the main");
+//        CircuitManager system = new CircuitManager();
+//        
+//        Component a = system.newAND("A", "B");
+//        
+//        Component b = system.newOR("C", "D");
+//
+//        CustomTwoPinsComponent test = new CustomTwoPinsComponent(a, b) {
+//            @Override
+//            public double evaluateResultDouble(double first, double second) {
+//                if ( first >= second) {
+//                    return 1;
+//                }
+//                else {
+//                    return 0;
+//                }
+//            }
+//
+//        };
+//        
+//        System.out.print("out");
+//
+//        System.out.print("s:" + test.getResultDouble());
     }
 }//end CircuitManager

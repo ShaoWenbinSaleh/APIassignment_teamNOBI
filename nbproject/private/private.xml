@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/ComponentFactory.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/CustomTwoPinsComponent.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/test/CircuitManager/CircuitManagerTest.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/GlobalVar.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/OnePinComponent.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/NOT.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/pkgnew/circuit/NewCircuit.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/CircuitManager.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/AND.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/InputComponent.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/TwoPinsComponent.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/CircuitComponent.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/OR.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/Component.java</file>
+            <file>file:/C:/Users/20184770/Documents/NetBeansProjects/new-Circuit/src/CircuitManager/VariablesList.java</file>
+        </group>
+    </open-files>
+</project-private>

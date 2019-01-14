@@ -10,7 +10,9 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import static org.junit.Assert.*;
+import org.junit.Rule;
 
 /**
  *
@@ -36,7 +38,9 @@ public class CircuitManagerTest {
     @After
     public void tearDown() {
     }
-
+    
+//    @Rule
+//    public ExpectedException thrown = ExpectedException.none(); 
     /**
      * Test of finalize method, of class CircuitManager.
      */
@@ -289,6 +293,75 @@ public class CircuitManagerTest {
        
 //        System.out.print(test.getResult());
    }
+    
+    //step2
+    @Test
+    public void testX1andX2orNotX1()
+    {
+        CircuitManager system = new CircuitManager();
+        
+        Component a = system.newAND("X1", "X2");
+        Component b = system.newNOT("X1");
+        Component c = system.newOR(a, b);
+        
+        system.setInput("X1", true);
+        system.setInput("X2", false);
+        
+        boolean res = c.getResult();
+        assertEquals(false, res);
+        
+        system.Reset();
+        
+        system.setInput("X1", false);
+        system.setInput("X2", true);
+        res = c.getResult();
+        assertEquals(true, res);
+        
+        system.Reset();
+        
+        system.setInput("X1", 0.0);
+        system.setInput("X2", 1.0);
+        double resDouble = c.getResultDouble();
+        assertTrue(1.0 == resDouble);
+//        assertEquals(1.0, resDouble);
+        
+        system.Reset();
+        
+        system.setInput("X1", 0.5);
+        system.setInput("X2", 0.5);
+        resDouble = c.getResultDouble();
+        assertTrue(0.625 == resDouble);
+//        assertEquals(0.625, resDouble);
+        
+        
+//        system.Reset();
+        
+       
+//        thrown.expect(IllegalArgumentException.class);
+   }
+    
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testX1andX2orNotX1_exception()
+    {
+        CircuitManager system = new CircuitManager();
+        
+        Component a = system.newAND("X1", "X2");
+        Component b = system.newNOT("X1");
+        Component c = system.newOR(a, b);
+        system.setInput("X1", 0.0);
+        system.setInput("X2", 2.0);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testImproperUseOfTheCircuit()
+    {
+        CircuitManager system = new CircuitManager();
+        
+        Component a = system.newAND("X1", "X1");
+        system.setInput("X1", 0.3);
+        system.setInput("X1", 0.5);
+    }
     
     @Test
     public void testGreaterThanElement()
