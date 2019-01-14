@@ -21,7 +21,7 @@ class NOT extends OnePinComponent {
 	}
 
     @Override
-    protected double getResultDouble() {
+    public double getResultDouble() {
         return 1- component.getResultDouble();
     }
 }//end NOT

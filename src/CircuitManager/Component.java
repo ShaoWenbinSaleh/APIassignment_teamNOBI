@@ -9,7 +9,7 @@ package CircuitManager;
 abstract public class Component {
 
 //	protected String expression;
-       protected abstract double getResultDouble();
+       public abstract double getResultDouble();
         
        public final boolean getResult() 
        {

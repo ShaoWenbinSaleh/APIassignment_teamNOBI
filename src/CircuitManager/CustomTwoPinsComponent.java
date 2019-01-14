@@ -18,7 +18,7 @@ public abstract class CustomTwoPinsComponent extends TwoPinsComponent {
 //    public abstract boolean evaluateResult(boolean first, boolean second);
     public abstract double evaluateResultDouble(double first, double second);
     
-    protected double getResultDouble()
+    public double getResultDouble()
     {
         return evaluateResultDouble(firstComponent.getResultDouble(), secondComponent.getResultDouble());
     }

@@ -20,7 +20,7 @@ class AND extends TwoPinsComponent {
 //	}
 
     @Override
-    protected double getResultDouble() {
+    public double getResultDouble() {
         return firstComponent.getResultDouble() * secondComponent.getResultDouble();
     }
 }//end AND

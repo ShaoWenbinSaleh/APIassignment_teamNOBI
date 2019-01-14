@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CircuitManager;
+package test;
 
+import CircuitManager.CircuitManager;
+import CircuitManager.Component;
+import CircuitManager.CustomTwoPinsComponent;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

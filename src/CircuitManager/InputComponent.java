@@ -24,7 +24,7 @@ class InputComponent extends Component {
 	}
 
     @Override
-    protected double getResultDouble() {
+    public double getResultDouble() {
         return VariablesList.getInstance().getVariableByName(varName);
     }
         
